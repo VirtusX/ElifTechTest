@@ -1,6 +1,8 @@
 # ElifTechTest
 ElifTech test task
+
 Database schema:
+
 Table 'company_list'
   `company_id` int(11) NOT NULL AUTO_INCREMENT KEY,
   `company_name` varchar(100) NOT NULL UNIQUE,
