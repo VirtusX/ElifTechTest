@@ -11,21 +11,11 @@ $(document).ready(function () {
     }
 });
 function getList() {
-    var xmlhttp;
     if (localStorage.getItem('select') == "") {
-        document.getElementById("company").innerHTML = "";
+        $("#company").innerHTML = "";
     }
     else {
-        if (window.XMLHttpRequest) {
-            xmlhttp = new XMLHttpRequest();
-        }
-        xmlhttp.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("company").innerHTML = this.responseText;
-            }
-        };
-        xmlhttp.open("GET", "list.php?c=" + localStorage.getItem('select'), true);
-        xmlhttp.send();
+        $("#company").load('list.php?c='+localStorage.getItem('select'));
     }
 }
 
